@@ -97,6 +97,8 @@ class DataEntryController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    var editStatus:Bool = false
+    var index:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -137,19 +139,37 @@ class DataEntryController: UIViewController {
     
 
 }
-extension DataEntryController
+extension DataEntryController:ShowDataControllerDelegat
 {
+    func showDataController(editStatus:Bool,didEdit object: [String : String], index:Int) {
+        self.nameTextField.text = object["name"]
+        self.addressTextField.text = object["address"]
+        self.cityTextField.text = object["city"]
+        self.mobileTextField.text = object["mobile"]
+        self.saveButton.setTitle("UPDATE", for: .normal)
+        
+        self.editStatus = editStatus
+        self.index = index
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func handleSaveButton(){
         guard let name = nameTextField.text else {return}
         guard let address = addressTextField.text else {return}
         guard let city = cityTextField.text else {return}
         guard let mobile = mobileTextField.text else {return}
         let dic = ["name":name,"address":address,"city":city,"mobile":mobile]
-        DatabaseManager.shareInstance.save(object: dic)
-        handleClearButton()
+        if editStatus {
+            print("Edit Database!")
+            DatabaseManager.shareInstance.editStudentData(object: dic , index: index)
+        }else {
+            DatabaseManager.shareInstance.save(object: dic)
+            handleClearButton()
+        }
     }
     @objc func handleShowButton(){
         let showdataController = ShowDataController()
+        showdataController.delegat = self
         let navController = UINavigationController(rootViewController: showdataController)
         present(navController,animated: true)
     }
@@ -158,6 +178,7 @@ extension DataEntryController
         self.addressTextField.text = ""
         self.cityTextField.text = ""
         self.mobileTextField.text = ""
+        self.saveButton.setTitle(String.saveTitle, for: .normal)
     }
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F492E57B23262876004A8219 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492E57A23262876004A8219 /* StudentCell.swift */; };
 		F4962C102325531D000E8F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4962C0F2325531D000E8F2C /* AppDelegate.swift */; };
 		F4962C122325531D000E8F2C /* DataEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4962C112325531D000E8F2C /* DataEntryController.swift */; };
 		F4962C152325531D000E8F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4962C132325531D000E8F2C /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F492E57A23262876004A8219 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
 		F4962C0C2325531C000E8F2C /* CRUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4962C0F2325531D000E8F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4962C112325531D000E8F2C /* DataEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		F4962C4A232555A7000E8F2C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F492E57A23262876004A8219 /* StudentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				F4962C55232589E7000E8F2C /* ShowDataController.swift in Sources */,
 				F4962C4F23255E0C000E8F2C /* Color.swift in Sources */,
 				F4962C422325546A000E8F2C /* Student+CoreDataClass.swift in Sources */,
+				F492E57B23262876004A8219 /* StudentCell.swift in Sources */,
 				F4962C182325531D000E8F2C /* CRUD.xcdatamodeld in Sources */,
 				F4962C5123257081000E8F2C /* String.swift in Sources */,
 				F4962C102325531D000E8F2C /* AppDelegate.swift in Sources */,
